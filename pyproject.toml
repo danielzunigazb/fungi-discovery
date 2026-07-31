@@ -1,0 +1,64 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fungi-discovery"
+version = "0.1.0"
+description = "Reproducible fungal ITS screening and candidate triage."
+readme = "README.md"
+requires-python = ">=3.14"
+license = { text = "MIT" }
+authors = [{ name = "Fungi Discovery contributors" }]
+keywords = ["bioinformatics", "fungi", "its", "metabarcoding", "blast"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+  "biopython>=1.87,<2",
+  "requests>=2.34,<3",
+]
+
+[project.optional-dependencies]
+preprocess = ["cutadapt>=5.2,<6"]
+dev = [
+  "pytest>=9.1,<10",
+  "pytest-cov>=7.1,<8",
+  "ruff>=0.16,<0.17",
+  "ty>=0.0.65",
+]
+
+[project.scripts]
+fungi-discovery = "fungi_discovery.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fungi_discovery"]
+
+[tool.pytest.ini_options]
+addopts = ["-ra", "--strict-config", "--strict-markers", "--cov=fungi_discovery", "--cov-report=term-missing", "--cov-fail-under=85"]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["fungi_discovery"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"

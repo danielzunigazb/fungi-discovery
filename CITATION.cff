@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: fungi-discovery
+message: "If you use this software, please cite the repository and the reference databases separately."
+type: software
+authors:
+  - name: Fungi Discovery contributors
+version: 0.1.0
+date-released: 2026-07-31
+license: MIT
+abstract: "Reproducible fungal ITS screening and candidate triage; not a formal species-identification or nomenclature system."
+references:
+  - type: article
+    authors:
+      - family-names: Nilsson
+        given-names: R. Henrik
+    title: "The UNITE database for molecular identification of fungi"
+    doi: 10.1093/nar/gky1022
+  - type: dataset
+    authors:
+      - name: UNITE Community
+    title: "UNITE QIIME release for Fungi. Version 19.02.2025"
+    doi: 10.15156/BIO/3301241

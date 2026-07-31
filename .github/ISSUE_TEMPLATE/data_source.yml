@@ -1,0 +1,30 @@
+name: Dataset or reference request
+description: Propón un dataset, referencia o mejora de procedencia.
+title: "data: "
+labels: [data]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: URL, DOI o accession
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: Licencia o condiciones de uso
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Motivo científico y relación con el pipeline
+    validations:
+      required: true
+  - type: textarea
+    id: reproducibility
+    attributes:
+      label: Reproducibilidad
+      description: "Incluye versión, fecha, tamaño, checksum si existe y cómo obtenerlo."
+    validations:
+      required: true

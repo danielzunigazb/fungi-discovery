@@ -1,0 +1,15 @@
+{
+  "run_accession": "SRR38913145",
+  "study_accession": "PRJNA1472785",
+  "sample_accession": "SAMN60516043",
+  "scientific_name": "food metagenome",
+  "library_strategy": "AMPLICON",
+  "library_layout": "PAIRED",
+  "instrument_model": "Illumina MiSeq",
+  "fastq_ftp": "ftp.sra.ebi.ac.uk/vol1/fastq/SRR389/045/SRR38913145/SRR38913145_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR389/045/SRR38913145/SRR38913145_2.fastq.gz",
+  "fastq_bytes": "3125037;3175552",
+  "fastq_md5": "f0346886e29277bd56ceb0c7b8f3b728;4155f0afa7b0f3114505ffadfb6d5c90",
+  "downloaded_at_utc": "2026-07-31T02:20:19.559371+00:00",
+  "source": "ENA public read archive",
+  "selection_reason": "Pilot ITS amplicon sample from Colombia; small public paired-end MiSeq run."
+}
