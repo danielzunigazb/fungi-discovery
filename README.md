@@ -1,4 +1,10 @@
-# fungi-discovery
+# 🔬 fungi-discovery
+
+**Reproducible fungal ITS screening and candidate triage.**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.14](https://img.shields.io/badge/python-3.14-3776ab.svg?logo=python&logoColor=white)](https://www.python.org/downloads/)
+[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 
 Herramientas reproducibles para procesar amplicones ITS de hongos y **priorizar secuencias que requieren revisión taxonómica**.
 
@@ -9,12 +15,12 @@ Herramientas reproducibles para procesar amplicones ITS de hongos y **priorizar 
 - Paquete Python instalable con CLI: `fungi-discovery`.
 - Pipeline piloto documentado: ITS2 de mucílago de café fermentado de Boyacá, Colombia.
 - Referencia de análisis: UNITE v10.0, release 2025-02-19, Fungi, delimitación dinámica.
-- Calidad automatizada: Ruff, Ty, Pytest, cobertura >=85%, build y GitHub Actions.
+- Calidad automatizada: Ruff, Ty, Pytest, cobertura ≥85%, build y GitHub Actions.
 
 ## Inicio rápido
 
 ```bash
-git clone <URL_DEL_REPOSITORIO> fungi-discovery
+git clone https://github.com/danielzunigazb/fungi-discovery
 cd fungi-discovery
 uv sync --extra dev --extra preprocess
 make check
@@ -53,31 +59,6 @@ uv run fungi-discovery annotate \
 
 Para una búsqueda rápida de coincidencias cercanas se usa `megablast`. Las secuencias sin hit cercano deben pasar por una segunda búsqueda más sensible (`--blast-task dc-megablast`) y revisión de cobertura antes de interpretarse.
 
-## Reproducir el piloto colombiano
-
-1. Sigue el setup y descarga los artefactos descritos en [`docs/DATA_PROVENANCE.md`](docs/DATA_PROVENANCE.md).
-2. Verifica checksums.
-3. Ejecuta:
-
-```bash
-bash scripts/run_srr38913145_pilot.sh
-```
-
-Resultado y limitaciones: [`docs/RESULTS_SRR38913145.md`](docs/RESULTS_SRR38913145.md).
-
-## Desarrollo
-
-```bash
-make format      # Formatea src/ y tests/
-make lint        # Ruff
-make typecheck   # Ty
-make test        # Pytest + cobertura
-make check       # lint + tipos + tests
-make build       # wheel + source distribution
-```
-
-Ver [`CONTRIBUTING.md`](CONTRIBUTING.md) antes de abrir un PR.
-
 ## Documentación
 
 | Documento | Contenido |
@@ -90,13 +71,17 @@ Ver [`CONTRIBUTING.md`](CONTRIBUTING.md) antes de abrir un PR.
 | [`docs/RESULTS_SRR38913145.md`](docs/RESULTS_SRR38913145.md) | Resultados del piloto y límites de interpretación |
 | [`docs/adr/`](docs/adr/) | Decisiones de arquitectura |
 
-## Datos, ética y seguridad
+## Desarrollo
 
-- `data/`, `results/`, `logs/` y `tools/` no se versionan: usa manifiestos, scripts, URLs y checksums para reproducirlos.
-- Respeta licencias de ENA/SRA/UNITE y atribuye datasets de terceros.
-- No recolectes, cultives ni transportes organismos desconocidos sin permisos, bioseguridad y supervisión.
-- No expongas correos personales, API keys ni ubicaciones sensibles. Consulta [`SECURITY.md`](SECURITY.md).
+```bash
+make format      # Formatea src/ y tests/
+make lint        # Ruff
+make typecheck   # Ty
+make test        # Pytest + cobertura
+make check       # lint + tipos + tests
+make build       # wheel + source distribution
+```
 
-## Licencia y citación
+## Licencia
 
-El código está bajo [MIT](LICENSE). Las referencias, datasets y herramientas externas conservan sus propias licencias y requisitos de citación. Consulta [`CITATION.cff`](CITATION.cff).
+MIT. Las referencias, datasets y herramientas externas conservan sus propias licencias.
